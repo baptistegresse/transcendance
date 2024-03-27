@@ -1,0 +1,29 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/tournaments/static/tournaments/css/tournament_participants.css"
+/>
+
+<table class="participant-list">
+  <thead>
+    <tr>
+      <th>Jugadores Registrados</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for participant in tournament.participants.all %}
+    <tr>
+      <td>
+        <img
+          src="/main/static/main/img/default_avatar.jpg"
+          alt="Avatar del Participante"
+          class="participant-list-avatar"
+        />
+        <span class="participant-list-username"
+          >{{ participant.user.username }}</span
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
